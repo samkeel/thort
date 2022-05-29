@@ -22,7 +22,7 @@ export class UserService {
   signUpNewUserEmail(authData: AuthData) {
     this.afAuth
       .createUserWithEmailAndPassword(authData.email, authData.password)
-      .then(() => this.router.navigate(['']))
+      .then(() => this.router.navigate(['notes/']))
       .catch((error) => {
         this.snackbarService.openSnackBar(error.message, '');
       });
@@ -31,7 +31,7 @@ export class UserService {
   login(authData: AuthData) {
     this.afAuth
       .signInWithEmailAndPassword(authData.email, authData.password)
-      .then(() => this.router.navigate(['']))
+      .then(() => this.router.navigate(['notes/']))
       .then(() => this.snackbarService.openSnackBar('Welcome back', ''))
       .catch((error) => {
         this.snackbarService.openSnackBar(error.message, '');

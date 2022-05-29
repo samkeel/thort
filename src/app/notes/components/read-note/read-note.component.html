@@ -1,0 +1,44 @@
+<section class="container">
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-card
+      class="mat-elevation-z4 test"
+      fxFlex.lt-sm="90"
+      fxFlex.lt-md="80"
+      fxFlex="70"
+    >
+      <mat-card-title>Title</mat-card-title>
+      <mat-card-subtitle>Category</mat-card-subtitle>
+      <mat-card-content
+        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio illum
+        aperiam magni numquam, porro et consequatur nihil dolorum eius iure
+        eaque, vel neque unde consequuntur. Blanditiis accusantium quod
+        molestiae. Ex! Eos voluptate at officia repudiandae dolores, ab impedit
+        dolorem velit ex sit consectetur quae porro omnis eveniet quos error?
+        Animi rem incidunt quaerat consequuntur officiis. Temporibus optio
+        quaerat vero ipsam. Eaque dicta nihil alias ipsum cupiditate porro
+        commodi. Dignissimos nam ipsa placeat inventore sit. Nobis sint maxime
+        amet fugiat, ducimus quasi provident laborum dolore iste ullam quibusdam
+        voluptate fuga cum? Animi magni, voluptas facere enim non nihil illo
+        minus fugit tenetur vitae saepe porro excepturi, assumenda suscipit
+        perferendis accusamus rerum explicabo harum aperiam perspiciatis debitis
+        iste? Delectus porro dicta esse! Dolorum quae asperiores, distinctio
+        enim aliquam incidunt atque odio officia eos, deserunt magnam facilis,
+        unde pariatur eveniet voluptatum sequi velit? Voluptas ullam iusto, ea
+        inventore quis reprehenderit! Perspiciatis, natus nihil?
+      </mat-card-content>
+      <mat-divider inset></mat-divider>
+      <mat-card-actions align="end" fxLayout="row" fxLayoutGap="10px">
+        <button mat-mini-fab color="primary">
+          <mat-icon (click)="backClick()">arrow_back</mat-icon>
+        </button>
+        <div fxFlex></div>
+        <button mat-mini-fab color="accent">
+          <mat-icon (click)="editClick()">edit</mat-icon>
+        </button>
+        <button mat-mini-fab color="warn">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</section>

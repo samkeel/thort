@@ -1,0 +1,33 @@
+<section class="container">
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-card
+      class="mat-elevation-z4"
+      fxFlex.lt-sm="90"
+      fxFlex.lt-md="80"
+      fxFlex="70"
+    >
+      <mat-card-title>Title</mat-card-title>
+      <mat-card-subtitle>Category</mat-card-subtitle>
+      <mat-card-content
+        >{{
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad voluptates sint iste exercitationem at aliquam facilis repellat commodi eum, incidunt assumenda dolorum vel officiis voluptatibus velit eligendi quod vero accusantium."
+            | truncate
+        }}
+        <small class="read" routerLink="read">Continue</small>
+      </mat-card-content>
+      <mat-divider inset></mat-divider>
+      <mat-card-actions align="end" fxLayout="row" fxLayoutGap="10px">
+        <button mat-mini-fab color="primary">
+          <mat-icon class="read" routerLink="read">open_in_full</mat-icon>
+        </button>
+        <div fxFlex></div>
+        <button mat-mini-fab color="accent">
+          <mat-icon class="read" routerLink="edit">edit</mat-icon>
+        </button>
+        <button mat-mini-fab color="warn">
+          <mat-icon (click)="clickDelete()">delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</section>
