@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav
+      #sidenav
+      [attr.role]="(ishandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(ishandset$ | async) ? 'over' : 'side'"
+      [opened]="(ishandset$ | async) === false"
+    >
+
+    <ng-container *ngIf="!(user.isLoggedIn$ | async); else noteCategory">
+      <app-side-nav></app-side-nav>
+    </ng-container>
+
+    <ng-template #noteCategory>
+      <app-note-side-nav></app-note-side-nav>
+    </ng-template>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <!-- transclusion -->
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
