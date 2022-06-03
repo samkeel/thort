@@ -3,7 +3,6 @@
 @use "sass:map";
 
 // Define a dark theme
-// $dark-primary: mat.define-palette(dp.$cust-dark-primary-palette, A200);
 $dark-primary: mat.define-palette(mat.$indigo-palette);
 $dark-accent: mat.define-palette(mat.$pink-palette);
 $dark-theme: mat.define-dark-theme(

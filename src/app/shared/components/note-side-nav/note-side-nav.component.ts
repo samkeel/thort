@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoteSideNavComponent implements OnInit {
 
+  filledNav = Array.from({length: 50}, (_, i) => `Category item ${i + 1}`);
+
   constructor() { }
 
   ngOnInit(): void {
