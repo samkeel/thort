@@ -11,6 +11,7 @@ import { NotesComponent } from './components/notes/notes.component';
 import { ReadNoteComponent } from './components/read-note/read-note.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { SharedModule } from '../shared/shared.module';
+import { TodoComponent } from './components/todo/todo.component';
 
 const components = [
   EditCategoryComponent,
@@ -20,6 +21,7 @@ const components = [
   NotesComponent,
   ReadNoteComponent,
   TruncatePipe,
+  TodoComponent
 ];
 
 @NgModule({

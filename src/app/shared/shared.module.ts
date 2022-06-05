@@ -36,6 +36,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatDividerModule} from '@angular/material/divider';
 
 const components = [
   HeaderComponent,
@@ -71,6 +72,7 @@ const matModules = [
   MatSelectModule,
   MatRadioModule,
   MatSlideToggleModule,
+  MatDividerModule
 ];
 
 @NgModule({

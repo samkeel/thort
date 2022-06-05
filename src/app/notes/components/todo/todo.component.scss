@@ -1,0 +1,29 @@
+.container {
+  margin: 10px;
+}
+
+.mat-card {
+  margin-bottom: 10px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.btn-container {
+  margin: 8px;
+}
+
+.checkbox-text {
+  overflow-wrap: break-word;
+}
+
+:host::ng-deep.mat-checkbox-layout {
+  white-space: normal !important;
+}
+
+:host::ng-deep.mat-checkbox-inner-container {
+  margin-top: 4px;
+}
+
+
