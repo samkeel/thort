@@ -51,7 +51,10 @@ export class TodoComponent implements OnInit, OnDestroy {
     this.newTodoForm.reset(this.initialValues);
   }
 
-  completedClick(): void {}
+  completedClick(todo: TodoData): void {
+    todo.isCompleted = !todo.isCompleted;
+    this.todoService.updateTodo(todo.id, todo);
+  }
 
   deleteClick(todoID: string): void {
     this.todoService.deleteTodo(todoID);

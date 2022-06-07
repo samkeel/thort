@@ -20,10 +20,10 @@
           </mat-form-field>
         </form>
         <!--  -->
-        <div *ngFor="let todo of todos">
+        <div *ngFor="let todo of todos; let i = index">
           <mat-divider [inset]="true"></mat-divider>
           <div fxLayout="row" fxLayoutAlign="start start">
-            <mat-checkbox fxFlex="90" >{{ todo.description }}</mat-checkbox>
+            <mat-checkbox fxFlex="90" [checked]="todo.isCompleted" (change)="completedClick(todo)">{{ todo.description }}</mat-checkbox>
             <div class="btn-container" fxLayoutAlign="end end">
               <button mat-mini-fab color="warn">
                 <mat-icon (click)="deleteClick(todo.id)">clear</mat-icon>
