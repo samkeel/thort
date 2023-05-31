@@ -1,0 +1,22 @@
+@use "palette";
+@use '@angular/material' as mat;
+
+@include mat.core();
+$animation_samples-primary: mat.define-palette(palette.$md-primary);
+$animation_samples-accent: mat.define-palette(palette.$md-accent, A200, A100, A400);
+$animation_samples-warn: mat.define-palette(mat.$red-palette);
+
+$my-typography: mat.define-typography-config();
+
+$animation_samples-theme: mat.define-light-theme((
+  color: (
+    primary: $animation_samples-primary,
+    accent: $animation_samples-accent,
+    warn: $animation_samples-warn,
+  ),
+  typography: $my-typography,
+));
+
+
+
+@include mat.all-component-themes($animation_samples-theme);

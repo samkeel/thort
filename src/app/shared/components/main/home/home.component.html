@@ -1,0 +1,21 @@
+<section [ngClass]="{ 'handset-portait': handset }">
+  <mat-card [ngClass]="{ 'handset-portait': handset }">
+    <mat-card-header>
+      <mat-card-title>Welcome to thort</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Login or sign up</p>
+      <p>{{ currentScreenSize }}</p>
+      <!-- <p>user logged in: {{ user.isLoggedIn$ | async }}</p> -->
+    </mat-card-content>
+    <mat-card-actions
+      class="card-actions"
+      [ngClass]="{ 'handset-grid': handset }"
+    >
+      <button mat-raised-button color="primary" routerLink="login">
+        Login
+      </button>
+
+    </mat-card-actions>
+  </mat-card>
+</section>
