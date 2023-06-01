@@ -82,7 +82,13 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(){
+    const email: string = this.email.value as string;
+    const password: string = this.password.value as string;
     
+    this._userService.login({
+      email: email,
+      password: password
+    })
   }
 
 }

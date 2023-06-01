@@ -91,5 +91,13 @@ export class SignUpComponent implements OnInit, OnDestroy {
     this.router.navigate(['login']);
   }
 
-  onSubmit() {}
+  onSubmit() {
+    const email: string = this.email.value as string;
+    const password: string = this.password.value as string;
+
+    this._userService.signUpNewUserEmail({
+      email: email,
+      password: password,
+    });
+  }
 }
