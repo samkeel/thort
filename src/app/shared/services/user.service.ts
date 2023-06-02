@@ -10,7 +10,7 @@ import {
   onAuthStateChanged,
 } from '@angular/fire/auth';
 import { EMPTY, Observable, map } from 'rxjs';
-import { AuthData } from '../Models/auth-data.model';
+import { AuthData } from '../models/auth-data.model';
 import { Router } from '@angular/router';
 import { SnackbarService } from './snackbar.service';
 

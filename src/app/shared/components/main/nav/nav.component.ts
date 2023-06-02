@@ -15,6 +15,7 @@ export class NavComponent {
   
   isHandset$: Observable<boolean> = this.bpoService.Handset$;
   isHandsetPortrait$: Observable<boolean> = this.bpoService.HandsetPortrait$;
+  isUserLoggedIn$: Observable<boolean> = this.user.isLoggedIn$;
 
   constructor(
     private bpoService: BpObserverService,

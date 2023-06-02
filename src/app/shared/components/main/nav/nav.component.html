@@ -1,4 +1,7 @@
-<mat-sidenav-container class="sidenav-container content">
+<mat-sidenav-container
+  class="sidenav-container content"
+  [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
+>
   <mat-sidenav
     #sidenav
     class="sidenav"
@@ -8,13 +11,15 @@
   >
     <mat-toolbar>Menu</mat-toolbar>
 
-    <mat-nav-list>
-      <a mat-list-item href="#">One</a>
-      <a mat-list-item href="#">Two</a>
-      <a mat-list-item href="#">Three</a>
-      <a mat-list-item href="#">Four</a>
-    </mat-nav-list>
-    
+    <ng-container *ngIf="!(isUserLoggedIn$ | async); else loggedNav">
+      <mat-nav-list>
+        <a mat-list-item href="#">{{ isUserLoggedIn$ | async }}</a>
+      </mat-nav-list>
+    </ng-container>
+
+    <ng-template #loggedNav>
+      <app-user-nav-list></app-user-nav-list>
+    </ng-template>
   </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet></router-outlet>

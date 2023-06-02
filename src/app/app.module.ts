@@ -32,6 +32,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { UserNavListComponent } from './shared/components/main/user-nav-list/user-nav-list.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     HomeComponent,
     HeaderComponent,
     NavComponent,
-    TopOfPageComponent
+    TopOfPageComponent,
+    UserNavListComponent
   ],
   imports: [
     BrowserModule,
