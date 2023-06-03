@@ -21,7 +21,6 @@
 <div
   class="notes-cards-list"
   [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
-  [@staggerListAnimation]
 >
   <div
     *ngFor="let note of notes$ | async"

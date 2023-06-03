@@ -17,7 +17,7 @@ export class NotesListComponent {
   constructor(public noteService: NotesService, private router: Router) {}
 
   deleteNote() {
-    // this.noteService.deleteNoteById(this.id);
+    this.noteService.deleteNoteById(this.id);
   }
 
   openNote() {
