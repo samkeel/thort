@@ -17,7 +17,6 @@ export class NewNoteDialogComponent {
   newNoteForm = this.fb.group({
     title: ['', { validators: [Validators.required], updateOn: 'blur' }],
     content: [''],
-    date: new Date(),
   });
 
   constructor(

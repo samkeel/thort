@@ -12,14 +12,17 @@ import {
   docSnapshots,
   DocumentData,
   DocumentReference,
+  FieldValue,
   Firestore,
   onSnapshot,
   orderBy,
   Query,
   query,
+  serverTimestamp,
   Unsubscribe,
   where,
 } from '@angular/fire/firestore';
+import * as firebase from 'firebase/app';
 import { Note } from '../models/note.model';
 import { Observable } from 'rxjs/internal/Observable';
 import { switchMap } from 'rxjs/operators';
@@ -42,8 +45,8 @@ export class NotesService {
   async createNote(note: Note) {
     const user = await this.afAuth.currentUser;
     let content = note.content as string;
-    note.summary = this.contentSummary(content);
-    addDoc(this.noteCollection, { ...note, uid: user?.uid });
+    note.summary = this.contentSummary(content);    
+    addDoc(this.noteCollection, { ...note, uid: user?.uid, created: serverTimestamp() });
     return this.snackbarService.openSnackBar('New note added', '');
   }
 
