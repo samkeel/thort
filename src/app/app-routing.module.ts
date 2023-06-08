@@ -24,6 +24,11 @@ const routes: Routes = [
       import('./notes/notes.module').then((m) => m.NotesModule),
   },
   {
+    path: 'sasha',
+    loadChildren: () =>
+      import('./sasha/sasha.module').then((m) => m.SashaModule),
+  },
+  {
     path: '**',
     loadComponent: () =>
       import(

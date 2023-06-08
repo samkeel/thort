@@ -1,0 +1,15 @@
+<section
+  class="main-card-section"
+  [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
+>
+  <mat-card
+    class="main-card"
+    [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
+  >
+    <mat-card-header>
+      <mat-card-title>Sasha Doctor Appointments</mat-card-title>
+      <mat-card-subtitle>Works</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content><p>xyz</p></mat-card-content>
+  </mat-card>
+</section>
