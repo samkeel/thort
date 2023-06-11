@@ -10,6 +10,38 @@
       <mat-card-title>Sasha Toilet Tracker</mat-card-title>
       <mat-card-subtitle>Works</mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content><p>xyz</p></mat-card-content>
+    <mat-card-content>
+      <div [formGroup]="form">
+        <mat-form-field>
+          <input
+            matInput
+            [matDatepicker]="bmDate"
+            formControlName="bmDate"
+            placeholder="BM Date"
+          />
+
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="bmDate"
+          ></mat-datepicker-toggle>
+
+          <mat-datepicker #bmDate></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <!-- <mat-icon>star</mat-icon> -->
+      <mat-icon
+        *ngFor="let icon of maxRatingArr; let index = index"
+        (mouseenter)="HandleMouseEnter(index)"
+        (mouseleave)="HandleMouseLeave()"
+        (click)="Rating(index)"
+        [ngClass]="{ checked: selectedStar > index }"
+        >star</mat-icon
+      >
+
+      <div class="form-val">
+        {{ form.value | json }}
+      </div>
+    </mat-card-content>
   </mat-card>
 </section>

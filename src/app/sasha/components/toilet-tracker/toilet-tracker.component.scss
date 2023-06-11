@@ -17,3 +17,10 @@
     grid-column-end: span 1;
   }
 }
+
+.checked {
+  color: orange;
+}
+mat-icon {
+  cursor: pointer;
+}
