@@ -21,6 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     ToiletTrackerComponent,
     NutritionistComponent,
     DrAppointmentsComponent,
+    StarRatingComponent,
   ],
   imports: [
     CommonModule,

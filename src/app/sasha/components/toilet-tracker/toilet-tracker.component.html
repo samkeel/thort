@@ -27,17 +27,10 @@
 
           <mat-datepicker #bmDate></mat-datepicker>
         </mat-form-field>
-      </div>
 
-      <!-- <mat-icon>star</mat-icon> -->
-      <mat-icon
-        *ngFor="let icon of maxRatingArr; let index = index"
-        (mouseenter)="HandleMouseEnter(index)"
-        (mouseleave)="HandleMouseLeave()"
-        (click)="Rating(index)"
-        [ngClass]="{ checked: selectedStar > index }"
-        >star</mat-icon
-      >
+        <app-star-rating formControlName="starRating"></app-star-rating>
+
+      </div>
 
       <div class="form-val">
         {{ form.value | json }}
