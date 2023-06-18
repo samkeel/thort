@@ -13,7 +13,10 @@ export class ToiletTrackerComponent implements OnInit {
 
   form = this.fb.group({
     bmDate: [new Date(), Validators.required],
-    starRating: [null]
+    bmAmount: [0],
+    sentimentDuring: [0],
+    sentimentAfter: [0],
+    bmComments: '',
   });
 
   constructor(private bpoService: BpObserverService, private fb: FormBuilder) {}

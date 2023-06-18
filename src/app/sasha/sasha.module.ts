@@ -19,9 +19,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
+import { BmAmountComponent } from './components/bm-amount/bm-amount.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { SentimentRatingComponent } from './components/sentiment-rating/sentiment-rating.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,8 @@ import { StarRatingComponent } from './components/star-rating/star-rating.compon
     NutritionistComponent,
     DrAppointmentsComponent,
     StarRatingComponent,
+    BmAmountComponent,
+    SentimentRatingComponent,
   ],
   imports: [
     CommonModule,
@@ -48,6 +53,7 @@ import { StarRatingComponent } from './components/star-rating/star-rating.compon
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatDividerModule,
   ],
 })
 export class SashaModule {}
