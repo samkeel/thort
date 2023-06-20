@@ -2,15 +2,16 @@
   class="main-card-section"
   [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
 >
-  <mat-card
+  <mat-accordion
     class="main-card"
     [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
   >
-    <mat-card-header>
-      <mat-card-title>Sasha Toilet Tracker</mat-card-title>
-      <mat-card-subtitle>Works</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
+    <mat-expansion-panel [expanded]="panelOpenState">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Sasha Toilet Tracker </mat-panel-title>
+        <mat-panel-description>Add New Entry</mat-panel-description>
+      </mat-expansion-panel-header>
+
       <div [formGroup]="form">
         <mat-form-field>
           <input
@@ -38,19 +39,49 @@
         <mat-divider></mat-divider>
         <p>Sentiment After</p>
         <app-sentiment-rating
-        formControlName="sentimentAfter"
+          formControlName="sentimentAfter"
         ></app-sentiment-rating>
         <mat-divider></mat-divider>
         <mat-form-field>
           <mat-label>Comments</mat-label>
-          <textarea matInput placeholder="It was like a mountain" formControlName="bmComments"></textarea>
+          <textarea
+            matInput
+            placeholder="It was like a mountain"
+            formControlName="bmComments"
+          ></textarea>
         </mat-form-field>
       </div>
-      
-      <mat-divider></mat-divider>
-      <div class="form-val">
-        {{ form.value | json }}
-      </div>
-    </mat-card-content>
-  </mat-card>
+
+      <mat-action-row>
+        <button mat-raised-button color="primary" (click)="onSubmit()">
+          Submit
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- <br />
+    
+    <div class="form-val">
+      {{ form.value | json }}
+    </div> -->
 </section>
+
+<div
+  class="timeline-container"
+  [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
+>
+  <div
+    *ngFor="let toiletEvent of toiletEvents$ | async"
+    class="timeline-cards"
+    [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
+  >
+    <app-toilet-tracker-card
+      bmDate="{{ toiletEvent.bmDate }}"
+      bmAmount="{{ toiletEvent.bmAmount }}"
+      sentimentDuring="{{ toiletEvent.sentimentDuring }}"
+      sentimentAfter="{{ toiletEvent.sentimentAfter }}"
+      bmComments="{{ toiletEvent.bmComments }}"
+    ></app-toilet-tracker-card>
+  </div>
+</div>

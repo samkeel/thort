@@ -2,6 +2,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Observable, filter } from 'rxjs';
 import { BpObserverService } from 'src/app/shared/services/bp-observer.service';
+import { ToiletTrackerService } from '../../services/toilet-tracker.service';
+import { formatDate } from '@angular/common';
+import { ToiletTracker } from '../../models/tTracker.model';
 
 @Component({
   selector: 'app-toilet-tracker',
@@ -10,16 +13,64 @@ import { BpObserverService } from 'src/app/shared/services/bp-observer.service';
 })
 export class ToiletTrackerComponent implements OnInit {
   isHandsetPortrait$: Observable<boolean> = this.bpoService.HandsetPortrait$;
+  panelOpenState = false;
+  toiletEvents$!: Observable<ToiletTracker[]>;
 
   form = this.fb.group({
-    bmDate: [new Date(), Validators.required],
+    bmDate: [formatDate, Validators.required],
     bmAmount: [0],
     sentimentDuring: [0],
     sentimentAfter: [0],
     bmComments: '',
   });
 
-  constructor(private bpoService: BpObserverService, private fb: FormBuilder) {}
+  constructor(
+    private bpoService: BpObserverService,
+    private fb: FormBuilder,
+    private _toiletTrackerService: ToiletTrackerService
+  ) {}
 
   ngOnInit() {}
+
+  ngAfterViewInit(): void {
+    this.toiletEvents$ = this._toiletTrackerService.getAllToiletEvents();
+  }
+
+  ngOnDestroy(): void {
+    
+  }
+
+  get bmDate() {
+    return this.form.controls['bmDate'];
+  }
+  get bmAmount() {
+    return this.form.controls['bmAmount'];
+  }
+  get sentimentDuring() {
+    return this.form.controls['sentimentDuring'];
+  }
+  get sentimentAfter() {
+    return this.form.controls['sentimentAfter'];
+  }
+  get bmComments() {
+    return this.form.controls['bmComments'];
+  }
+
+  onSubmit() {
+    const bmDate = this.bmDate.value as unknown as string;
+    const bmAmount = this.bmAmount.value as number;
+    const sentimentDuring = this.sentimentDuring.value as number;
+    const sentimentAfter = this.sentimentAfter.value as number;
+    const bmComments = this.bmComments.value as string;
+
+    this._toiletTrackerService.createBM({
+      bmDate: bmDate,
+      bmAmount: bmAmount,
+      sentimentAfter: sentimentAfter,
+      sentimentDuring: sentimentDuring,
+      bmComments: bmComments,
+    });
+
+    this.form.reset();
+  }
 }

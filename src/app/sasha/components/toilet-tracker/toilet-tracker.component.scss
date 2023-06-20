@@ -24,3 +24,23 @@
 mat-icon {
   cursor: pointer;
 }
+
+.timeline-container {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  &.handset-portait {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  row-gap: 1em;
+}
+
+.timeline-cards {
+  grid-column-start: 3;
+  grid-column-end: span 4;
+  &.handset-portait {
+    grid-template-columns: 1fr;
+    grid-column-start: 2;
+    grid-column-end: span 2;
+  }
+}

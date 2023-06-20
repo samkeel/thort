@@ -25,6 +25,10 @@ import { StarRatingComponent } from './components/star-rating/star-rating.compon
 import { BmAmountComponent } from './components/bm-amount/bm-amount.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { SentimentRatingComponent } from './components/sentiment-rating/sentiment-rating.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { ToiletTrackerCardComponent } from './components/toilet-tracker-card/toilet-tracker-card.component';
+import { DateFormatAfPipe } from './pipes/date-format-af.pipe';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +41,8 @@ import { SentimentRatingComponent } from './components/sentiment-rating/sentimen
     StarRatingComponent,
     BmAmountComponent,
     SentimentRatingComponent,
+    ToiletTrackerCardComponent,
+    DateFormatAfPipe,
   ],
   imports: [
     CommonModule,
@@ -54,6 +60,7 @@ import { SentimentRatingComponent } from './components/sentiment-rating/sentimen
     MatDatepickerModule,
     MatNativeDateModule,
     MatDividerModule,
+    MatExpansionModule
   ],
 })
 export class SashaModule {}
