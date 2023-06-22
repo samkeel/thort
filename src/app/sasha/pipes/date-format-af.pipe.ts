@@ -1,22 +1,16 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { DatePipe, formatDate } from '@angular/common';
+import { Inject, LOCALE_ID, Pipe, PipeTransform } from '@angular/core';
+import { Timestamp } from '@angular/fire/firestore';
+// import { DatePipe } from '@angular/common';
 
 @Pipe({
-  name: 'dateFormatAf'
+  name: 'dateFormatAf',
 })
-// export class DateFormatAfPipe extends DatePipe implements PipeTransform {
 
-//   override transform(value: any, args?: any): any {
-//     return super.transform(value.toDate(), args);
-//   }
-
-// }
 export class DateFormatAfPipe implements PipeTransform {
+  constructor(@Inject(LOCALE_ID) private locale: string) {}
 
-  transform(value: any, format: string = 'mediumDate'): any {
-    const datePipe = new DatePipe('en-US');
-    const transformedDate = datePipe.transform(value.toDate(), format);
-    return transformedDate;
+  transform(timestamp: Timestamp, format?: string): string {
+    return formatDate(timestamp.toDate(), format || 'dd/MM/yy', this.locale);
   }
-
 }

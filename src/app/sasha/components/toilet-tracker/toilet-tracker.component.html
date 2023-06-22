@@ -77,7 +77,7 @@
     [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
   >
     <app-toilet-tracker-card
-      bmDate="{{ toiletEvent.bmDate }}"
+      bmDate="{{ toiletEvent.bmDate | dateFormatAf}}"
       bmAmount="{{ toiletEvent.bmAmount }}"
       sentimentDuring="{{ toiletEvent.sentimentDuring }}"
       sentimentAfter="{{ toiletEvent.sentimentAfter }}"

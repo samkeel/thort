@@ -5,6 +5,7 @@ import { BpObserverService } from 'src/app/shared/services/bp-observer.service';
 import { ToiletTrackerService } from '../../services/toilet-tracker.service';
 import { formatDate } from '@angular/common';
 import { ToiletTracker } from '../../models/tTracker.model';
+import { Timestamp } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-toilet-tracker',
@@ -57,7 +58,7 @@ export class ToiletTrackerComponent implements OnInit {
   }
 
   onSubmit() {
-    const bmDate = this.bmDate.value as unknown as string;
+    const bmDate = this.bmDate.value as unknown as Timestamp;
     const bmAmount = this.bmAmount.value as number;
     const sentimentDuring = this.sentimentDuring.value as number;
     const sentimentAfter = this.sentimentAfter.value as number;

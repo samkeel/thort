@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ToiletTrackerService } from '../../services/toilet-tracker.service';
 import { DatePipe } from '@angular/common';
+import { DateFormatAfPipe } from '../../pipes/date-format-af.pipe';
 
 @Component({
   selector: 'app-toilet-tracker-card',

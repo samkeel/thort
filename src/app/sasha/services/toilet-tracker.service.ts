@@ -14,6 +14,7 @@ import {
   DocumentReference,
   FieldValue,
   Firestore,
+  limit,
   onSnapshot,
   orderBy,
   Query,
@@ -52,7 +53,7 @@ export class ToiletTrackerService {
   }
 
   getAllToiletEvents() {
-    const allEvents = query(this.toiletTrackerCollection, orderBy('bmDate'));
+    const allEvents = query(this.toiletTrackerCollection, orderBy('bmDate' , 'desc'), limit(5));
     return collectionData(allEvents, { idField: 'id' }) as Observable<
       ToiletTracker[]
     >;
