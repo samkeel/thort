@@ -28,6 +28,7 @@ import { SentimentRatingComponent } from './components/sentiment-rating/sentimen
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ToiletTrackerCardComponent } from './components/toilet-tracker-card/toilet-tracker-card.component';
 import { DateFormatAfPipe } from './pipes/date-format-af.pipe';
+import { ConductComponent } from './components/conduct/conduct.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { DateFormatAfPipe } from './pipes/date-format-af.pipe';
     SentimentRatingComponent,
     ToiletTrackerCardComponent,
     DateFormatAfPipe,
+    ConductComponent,
   ],
   imports: [
     CommonModule,
