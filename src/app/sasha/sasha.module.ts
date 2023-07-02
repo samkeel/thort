@@ -29,6 +29,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { ToiletTrackerCardComponent } from './components/toilet-tracker-card/toilet-tracker-card.component';
 import { DateFormatAfPipe } from './pipes/date-format-af.pipe';
 import { ConductComponent } from './components/conduct/conduct.component';
+import { RichTextPipe } from './pipes/rich-text.pipe';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { ConductComponent } from './components/conduct/conduct.component';
     ToiletTrackerCardComponent,
     DateFormatAfPipe,
     ConductComponent,
+    RichTextPipe,
   ],
   imports: [
     CommonModule,

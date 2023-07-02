@@ -29,11 +29,13 @@ mat-icon {
   padding: 1em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: start;
   &.handset-portait {
     grid-template-columns: 1fr 1fr 1fr;
   }
   row-gap: 1em;
 }
+
 
 .timeline-cards {
   grid-column-start: 3;

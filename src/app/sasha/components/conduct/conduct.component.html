@@ -1,1 +1,19 @@
-<p>conduct works!</p>
+<section
+  class="main-card-section"
+  [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
+>
+  <mat-accordion
+    class="main-card"
+    [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
+  >
+    <div *ngFor="let conductReason of conductReasons$ | async">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>{{conductReason.title}}</mat-panel-title>
+            </mat-expansion-panel-header>
+            <div [innerHTML]="conductReason.summary"></div>
+          </mat-expansion-panel>
+    </div>
+
+  </mat-accordion>
+</section>

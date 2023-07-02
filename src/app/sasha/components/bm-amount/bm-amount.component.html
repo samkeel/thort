@@ -1,10 +1,14 @@
-<div>
-  <mat-icon
+<section>
+  <div class="line"></div>
+  <div>
+    <mat-icon
     *ngFor="let icon of maxRatingArr; let index = index"
     (mouseenter)="HandleMouseEnter(index)"
     (mouseleave)="HandleMouseLeave()"
     (click)="Rating(index)"
     [ngClass]="{ checked: selectedWeight > index }"
     >{{showIcon(index)}}</mat-icon
-  >  
-</div>
+    >  
+  </div>
+  
+</section>
