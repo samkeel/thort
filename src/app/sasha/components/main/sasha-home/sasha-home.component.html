@@ -1,17 +1,17 @@
-<mat-tab-group dynamicHeight>
+<mat-tab-group dynamicHeight (selectedTabChange)="onTabChange($event)">
   <mat-tab label="Overview">
-    <app-overview></app-overview>
+    <app-overview *ngIf="activeTab === 1"></app-overview>
   </mat-tab>
   <mat-tab label="Toilet Tracker">
-    <app-toilet-tracker></app-toilet-tracker>
+    <app-toilet-tracker *ngIf="activeTab === 2"></app-toilet-tracker>
   </mat-tab>
   <mat-tab label="Nutritionist">
-    <app-nutritionist></app-nutritionist>
+    <app-nutritionist *ngIf="activeTab === 3"></app-nutritionist>
   </mat-tab>
   <mat-tab label="Behavioural">
-    <app-conduct></app-conduct>    
+    <app-conduct *ngIf="activeTab === 4"></app-conduct>    
   </mat-tab>
   <mat-tab label="Dr. Apt.">
-    <app-dr-appointments></app-dr-appointments>
+    <app-dr-appointments *ngIf="activeTab === 5"></app-dr-appointments>
   </mat-tab>
 </mat-tab-group>
