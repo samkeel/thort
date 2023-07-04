@@ -30,6 +30,7 @@ import { ToiletTrackerCardComponent } from './components/toilet-tracker-card/toi
 import { DateFormatAfPipe } from './pipes/date-format-af.pipe';
 import { ConductComponent } from './components/conduct/conduct.component';
 import { RichTextPipe } from './pipes/rich-text.pipe';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { RichTextPipe } from './pipes/rich-text.pipe';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDividerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    AngularEditorModule
   ],
 })
 export class SashaModule {}

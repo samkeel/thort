@@ -41,15 +41,11 @@
         <app-sentiment-rating
           formControlName="sentimentAfter"
         ></app-sentiment-rating>
-        <mat-divider></mat-divider>
-        <mat-form-field>
-          <mat-label>Comments</mat-label>
-          <textarea
-            matInput
-            placeholder="It was like a mountain"
-            formControlName="bmComments"
-          ></textarea>
-        </mat-form-field>
+        <angular-editor
+          matInput
+          formControlName="bmComments"
+          [config]="editorConfig"
+        ></angular-editor>
       </div>
 
       <mat-action-row>
@@ -59,12 +55,12 @@
       </mat-action-row>
     </mat-expansion-panel>
   </mat-accordion>
+<!-- 
+  <br />
 
-  <!-- <br />
-    
-    <div class="form-val">
-      {{ form.value | json }}
-    </div> -->
+  <div class="form-val">
+    {{ form.value | json }}
+  </div> -->
 </section>
 
 <div
@@ -77,11 +73,11 @@
     [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
   >
     <app-toilet-tracker-card
-      bmDate="{{ toiletEvent.bmDate | dateFormatAf}}"
+      bmDate="{{ toiletEvent.bmDate | dateFormatAf }}"
       bmAmount="{{ toiletEvent.bmAmount }}"
       sentimentDuring="{{ toiletEvent.sentimentDuring }}"
       sentimentAfter="{{ toiletEvent.sentimentAfter }}"
       bmComments="{{ toiletEvent.bmComments }}"
     ></app-toilet-tracker-card>
   </div>
-
+</div>

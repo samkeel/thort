@@ -34,6 +34,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { UserNavListComponent } from './shared/components/main/user-nav-list/user-nav-list.component';
 
+//kolkov rich text editor
+import { AngularEditorModule } from '@kolkov/angular-editor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +66,8 @@ import { UserNavListComponent } from './shared/components/main/user-nav-list/use
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    AngularEditorModule
   ],
   providers: [
     BpObserverService,

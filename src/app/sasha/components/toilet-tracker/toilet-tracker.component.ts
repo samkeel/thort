@@ -6,6 +6,7 @@ import { ToiletTrackerService } from '../../services/toilet-tracker.service';
 import { formatDate } from '@angular/common';
 import { ToiletTracker } from '../../models/tTracker.model';
 import { Timestamp } from '@angular/fire/firestore';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-toilet-tracker',
@@ -31,15 +32,24 @@ export class ToiletTrackerComponent implements OnInit {
     private _toiletTrackerService: ToiletTrackerService
   ) {}
 
+  editorConfig: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    minHeight: '0',
+    maxHeight: 'auto',
+    width: 'auto',
+    minWidth: '0',
+    defaultParagraphSeparator: '',
+    showToolbar: false,
+  };
+
   ngOnInit() {}
 
   ngAfterViewInit(): void {
     this.toiletEvents$ = this._toiletTrackerService.getAllToiletEvents();
   }
 
-  ngOnDestroy(): void {
-    
-  }
+  ngOnDestroy(): void {}
 
   get bmDate() {
     return this.form.controls['bmDate'];
@@ -74,6 +84,4 @@ export class ToiletTrackerComponent implements OnInit {
 
     this.form.reset();
   }
-  
-  
 }

@@ -4,6 +4,6 @@
         <p>BM Amount: {{bmAmount}}/5</p>
         <p>Sentiment During: {{sentimentDuring}}/5 </p>
         <p>Sentiment After: {{sentimentAfter}}/5 </p>
-        <p>Comments: {{bmComments}}</p>
+        <p>Comments:</p> <div [innerHTML]="bmComments"></div>
     </mat-card-content>
 </mat-card>
