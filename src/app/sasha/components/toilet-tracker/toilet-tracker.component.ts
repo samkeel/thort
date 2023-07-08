@@ -41,11 +41,17 @@ export class ToiletTrackerComponent implements OnInit {
     minWidth: '0',
     defaultParagraphSeparator: '',
     showToolbar: false,
+    sanitize: true,
+    placeholder: 'Enter comments here...',
   };
 
   ngOnInit() {}
 
   ngAfterViewInit(): void {
+    this.reloadEvents();    
+  }
+
+  reloadEvents() {
     this.toiletEvents$ = this._toiletTrackerService.getAllToiletEvents();
   }
 

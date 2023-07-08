@@ -22,9 +22,10 @@
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <p class="summary-text">
-        {{ summary }}
-      </p>
+      <!-- <p class="summary-text"> -->
+        <!-- {{ summary }} -->
+      <!-- </p> -->
+      <div [innerHTML]="summary" class="summary-text"></div>
     </mat-card-content>
     <mat-card-actions align="end">
       <button

@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatButtonModule,
     MatProgressSpinnerModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    AngularEditorModule
   ]
 })
 export class NotesModule { }

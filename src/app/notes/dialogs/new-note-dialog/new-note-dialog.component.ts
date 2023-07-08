@@ -7,6 +7,7 @@ import {
   MatDialogRef,
 } from '@angular/material/dialog';
 import { Note } from '../../models/note.model';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-new-note-dialog',
@@ -32,6 +33,19 @@ export class NewNoteDialogComponent {
   save() {
     this.dialogRef.close(this.newNoteForm.value);
   }
+
+  editorConfig: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    minHeight: '0',
+    maxHeight: 'auto',
+    width: 'auto',
+    minWidth: '0',
+    defaultParagraphSeparator: '',
+    showToolbar: false,
+    sanitize: true,
+    placeholder: 'Enter comments here...',
+  };
 
 
 }

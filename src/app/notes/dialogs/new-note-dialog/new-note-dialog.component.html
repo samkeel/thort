@@ -11,14 +11,11 @@
       />
     </mat-form-field>
     <br />
-    <mat-form-field>
-      <textarea
-        matInput
-        type="text"
-        placeholder="Content"
-        formControlName="content"
-      ></textarea>
-    </mat-form-field>
+    <angular-editor
+      matInput
+      formControlName="content"
+      [config]="editorConfig"
+    ></angular-editor>
   </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
@@ -27,3 +24,7 @@
     Submit
   </button>
 </mat-dialog-actions>
+
+<!-- <div class="form-val">
+  {{ newNoteForm.value | json }}
+</div> -->

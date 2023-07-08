@@ -22,6 +22,10 @@ export class ConductComponent implements OnInit {
   ngOnInit() {}
 
   ngAfterViewInit(): void {
+    this.reloadConduct();
+  }
+
+  reloadConduct() {
     this.conductReasons$ = this._conductService.getAllConductData();
   }
 }
