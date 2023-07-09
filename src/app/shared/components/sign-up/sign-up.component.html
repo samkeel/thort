@@ -2,7 +2,7 @@
     <mat-card [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }">
       <mat-card-header>
         <mat-card-title>Sign up</mat-card-title>
-        <mat-card-subtitle>Join the dark side</mat-card-subtitle>
+        <mat-card-subtitle>New users deactivated</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <form
@@ -64,11 +64,17 @@
         </ng-template>
       </mat-card-content>
       <mat-card-actions align="end">
-        <button 
+        <!-- <button 
           mat-raised-button
           color="primary"
           [disabled]="signUpForm.invalid"
           (click)="onSubmit()"
+        >
+          Create account
+        </button> -->
+        <button 
+          mat-raised-button
+          disabled
         >
           Create account
         </button>
