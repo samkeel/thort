@@ -33,6 +33,7 @@ import { RichTextPipe } from './pipes/rich-text.pipe';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 
 
+
 @NgModule({
   declarations: [
     SashaHomeComponent,
@@ -66,7 +67,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     MatNativeDateModule,
     MatDividerModule,
     MatExpansionModule,
-    AngularEditorModule
+    AngularEditorModule,
   ],
 })
 export class SashaModule {}

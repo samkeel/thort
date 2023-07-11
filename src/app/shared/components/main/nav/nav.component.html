@@ -13,7 +13,9 @@
 
     <ng-container *ngIf="!(isUserLoggedIn$ | async); else loggedNav">
       <mat-nav-list>
-        <a mat-list-item href="#">{{ isUserLoggedIn$ | async }}</a>
+        <!-- <a mat-list-item href="#">{{ isUserLoggedIn$ | async }}</a> -->
+        <a mat-list-item routerLink="login">Login</a>
+        <a mat-list-item routerLink="signup">Sign up</a>
       </mat-nav-list>
     </ng-container>
 

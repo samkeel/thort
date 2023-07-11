@@ -2,14 +2,50 @@
   class="main-card-section"
   [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
 >
-  <mat-card
+  <mat-accordion
     class="main-card"
     [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
   >
-    <mat-card-header>
-      <mat-card-title>Sasha Doctor Appointments</mat-card-title>
-      <mat-card-subtitle>Works</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content><p>xyz</p></mat-card-content>
-  </mat-card>
+    <mat-expansion-panel [expanded]="panelOpenState">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Dr. Appointments </mat-panel-title>
+        <mat-panel-description>Add New Entry</mat-panel-description>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </mat-accordion>
 </section>
+
+<!-- <div class="timeline-wrapper">
+  <ul class="StepProgress">
+    <li class="StepProgress-item is-done">
+      <div class="bold time">10:00 Am</div>
+      <div class="bold">Step 1</div>
+    </li>
+    <li class="StepProgress-item is-done">
+      <div class="bold time">11:00 Am</div>
+      <div class="bold">Step 2</div>
+      <div>En proceso</div>
+    </li>
+    <li class="StepProgress-item current">
+      <div class="bold time">12:00 Pm</div>
+      <div class="bold">Step 3</div>
+    </li>
+    <li class="StepProgress-item">
+      <div class="bold time">01:00 Pm</div>
+      <div class="bold">Step 4</div>
+    </li>
+    <li class="StepProgress-item">
+      <div class="bold time">02:00 Pm</div>
+      <div class="bold">Step 5</div>
+    </li>
+  </ul>
+</div> -->
+
+<div class="appointment-timeline-wrapper" [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }">
+  <ul class="timeline-progress" [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }">
+    <li *ngFor="let item of items" class="appointment-time">
+      <div >{{item.appointmentDate}}</div>
+      <div>{{item.details}} - {{item.id}}</div>
+    </li>
+  </ul>
+</div>
