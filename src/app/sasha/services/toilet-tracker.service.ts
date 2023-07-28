@@ -59,6 +59,13 @@ export class ToiletTrackerService {
     >;
   }
 
+  getEntireToiletEventsHistory() {
+    const completeEvents = query(this.toiletTrackerCollection, orderBy('bmDate' , 'desc'));
+    return collectionData(completeEvents, { idField: 'id' }) as Observable<
+      ToiletTracker[]
+    >;
+  }
+
   deleteEventById(id: string) {
     const delDoc = doc(this.afs, `toiletTracker/${id}`);
     this.snackbarService.openSnackBar('Event deleted', '');

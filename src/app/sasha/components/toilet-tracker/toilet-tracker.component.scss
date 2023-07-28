@@ -30,19 +30,31 @@ mat-icon {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   align-items: start;
+  // &.handset-portait {
+  //   grid-template-columns: 1fr 1fr 1fr;
+  // }
   &.handset-portait {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
   }
   row-gap: 1em;
 }
 
 
+// .timeline-cards {
+//   grid-column-start: 3;
+//   grid-column-end: span 4;
+//   &.handset-portait {
+//     grid-template-columns: 1fr;
+//     grid-column-start: 2;
+//     grid-column-end: span 2;
+//   }
+// }
 .timeline-cards {
-  grid-column-start: 3;
-  grid-column-end: span 4;
+  grid-column-start: 2;
+  grid-column-end: span 5;
   &.handset-portait {
-    grid-template-columns: 1fr;
-    grid-column-start: 2;
-    grid-column-end: span 2;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-start: 1;
+    grid-column-end: span 1;
   }
 }

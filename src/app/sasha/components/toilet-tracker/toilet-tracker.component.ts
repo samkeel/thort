@@ -90,4 +90,12 @@ export class ToiletTrackerComponent implements OnInit {
 
     this.form.reset();
   }
+
+  fullHistory() {
+    this.toiletEvents$ = this._toiletTrackerService.getEntireToiletEventsHistory();
+  }
+
+  filteredHistory() {
+    this.reloadEvents();    
+  }
 }

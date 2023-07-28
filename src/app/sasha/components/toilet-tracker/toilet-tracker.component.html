@@ -54,6 +54,20 @@
         </button>
       </mat-action-row>
     </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="panelOpenState">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Filters </mat-panel-title>        
+      </mat-expansion-panel-header>
+      <mat-action-row>
+        <button mat-raised-button color="primary" (click)="fullHistory()">
+          Entire History
+        </button>
+        <button mat-raised-button color="primary" (click)="filteredHistory()">
+          Filtered
+        </button>
+      </mat-action-row>
+      </mat-expansion-panel>
   </mat-accordion>
 <!-- 
   <br />
